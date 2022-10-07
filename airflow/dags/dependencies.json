@@ -1,0 +1,13 @@
+{
+  "02_pipeline": "01_pipeline_init",
+  "03_pipeline": "01_pipeline_init",
+  "04_pipeline": "01_pipeline_init",
+  "05_pipeline": "01_pipeline_init",
+  "06_pipeline": [
+    "02_pipeline",
+    "03_pipeline",
+    "04_pipeline",
+    "05_pipeline"
+  ],
+  "07_pipeline": "06_pipeline"
+}
