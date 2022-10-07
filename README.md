@@ -6,9 +6,9 @@ state store and orchestrating ETL pipelines based on this store.<p>
 Distributed systems use etcd as a consistent key-value store for 
 configuration management, service discovery, and coordinating distributed work.<p>
 
-Status of this RnD work is PoC.
+#### Status of this RnD work is PoC.
 
-###### Looks like etcd and watcher needs to be in the separate environment to make it possible to other teams to work with it. For example, adding dependencies.
+###### And looks like etcd and watcher needs to be in the separate environment to make it possible to other teams to work with it. For example, adding dependencies.
 
 ***
 ## Code description:
