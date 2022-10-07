@@ -44,6 +44,7 @@ I specified these dependecies in the file because of possibility of versioning. 
 Clone repository:
 
     gh repo clone trifonov-tema/airflow-etcd-playground
+    cd ./airflow-etcd-playground 
 
 Startup environment:
 

@@ -19,7 +19,7 @@ def get_etcd():
 
 def work():
     # time.sleep(1)
-    time.sleep(randint(0, 20))
+    time.sleep(randint(0, 2))
 
 
 def get_key_for_dag(execution_date, dag_name):
