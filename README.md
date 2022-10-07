@@ -8,10 +8,10 @@ configuration management, service discovery, and coordinating distributed work.<
 
 Status of this RnD work is PoC.
 
-######Looks like etcd and watcher needs to be in the separate environment to make it possible to other teams to work with it. For example, adding dependencies.
+###### Looks like etcd and watcher needs to be in the separate environment to make it possible to other teams to work with it. For example, adding dependencies.
 
 ***
-##Code description:
+## Code description:
 - ```00_watcher.py``` - DAG that used to watch changes in state store. It starts every minute. 
   But for now it works untill it will be turned off. I think that in future it can be 
   constrained with 100 (or any other number) of etcd reads to make logs less heavy and more comfort to check
@@ -40,7 +40,7 @@ Pipeline dependencies in the dependencies.json file looks like:<p>
 ```
 I specified these dependecies in the file because of possibility of versioning. <p>
 ***
-##Installation
+## Installation
 Clone repository:
 
     gh repo clone trifonov-tema/airflow-etcd-playground
@@ -49,23 +49,23 @@ Startup environment:
 
     docker-compose up -d
 
-##Airflow credentials
+## Airflow credentials
 http://localhost:8080/
 - user: airflow 
 - password: airflow
 
-##How to test
-####Normal orchestrating
+## How to test
+#### Normal orchestrating
 - Enable all DAGs in Airflow 
 - See how pipelines are loading one after another regarding the ```dependencies.json``` file
 
-####Orchestrating DAGs in case of rerunning some DAG Runs
+#### Orchestrating DAGs in case of rerunning some DAG Runs
 - Enable all DAGs in Airflow 
 - Wait till all piplines will be loaded
 - Clear DAG Runs for some piplines
 - See how related piplines will be loaded regarding  the ```dependencies.json``` file
 
-####Orchestrating DAGs in case of turned off watcher (due to fail or anything else)
+#### Orchestrating DAGs in case of turned off watcher (due to fail or anything else)
 - Enable all DAGs except ```00_watcher``` DAG in Airflow 
 - Wait till ```01_pipeline_init``` will be loaded
 - See that related DAGs haven't start
